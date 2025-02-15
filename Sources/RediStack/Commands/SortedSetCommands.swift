@@ -611,7 +611,7 @@ extension RedisClient {
 
         return send(command: command, with: args)
             .tryConverting(to: [RESPValue].self)
-            .flatMapThrowing { try Self._mapSortedSetResponse($0, scoreIsFirst: true) }
+            .flatMapThrowing { try Self._mapSortedSetResponse($0, scoreIsFirst: false) }
     }
 }
 
